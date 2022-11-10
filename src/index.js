@@ -58,7 +58,7 @@
 // // const message1 = "私の名前は" + name + "です。年齢は" + age + "です。";
 // // console.log(message1);
 
-// //テンプレート文字列を用いた方法
+// //テンプレート文字列を用いた方法(バッククォーテーション``で囲む)
 // const message2 = `私の名前は${name}です。年齢は${age}です。`;
 // console.log(message2);
 
@@ -69,7 +69,14 @@
 // function func1(str) {
 //   return str;
 // }
-// //従来の関数2
+// console.log(func1("func1です"));
+
+// function func (num1,num2) {
+//   return num1 + num2;
+// };
+// console.log(func(56,89))
+
+// // //従来の関数2
 // const func2 = function (str) {
 //   return str;
 // };
@@ -147,17 +154,70 @@
 // console.log(arry3);
 
 //配列のコピー、結合
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
 
-// const arr6 = [...arr4];
-// console.log(arr6);
+// // const arr6 = [...arr4];
+// // arr6[0] = 100;
+// // console.log(arr6);
+// // console.log(arr4);
 
-// const arr7 = [...arr4,...arr5];
-// console.log(arr7)
+// // const arr7 = [...arr4,...arr5];
+// // console.log(arr7)
 
-const arr8 = arr4;
-console.log(arr8);
-arr8[0] = 100;
-console.log(arr8);
-console.log(arr4);
+// const arr8 = arr4;
+// console.log(arr8);
+// arr8[0] = 100;
+// console.log(arr8);
+// console.log(arr4);
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+const nameArr = ["田中", "山田", "じゃけぇ"];
+//基本的な配列
+// for (let index = 0; index < nameArr.length; index++){
+//   console.log(nameArr[index]);
+// }
+// for (let index = 0; index < nameArr.length; index++){
+//   console.log(`${index + 1}番目は${nameArr[index]}です`);
+// }
+
+// for (let index = 0; index < nameArr.length; index++){
+//   console.log(index + 1 +"番目は" + nameArr[index] + "です");
+// }
+
+// //mapの基本的な構文
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
+
+// //アロー関数とmapを使った構文
+// //{}←ブラケットっていう名前
+// nameArr.map((name) => console.log(name));
+
+// nameArr.map((name,index) => console.log(`${index + 1}番目は${name}です`));
+
+// /**
+//  * filter
+//  */
+// const numArr = [1,2,3,4,5,];
+// const newNumArr = numArr.filter((num) =>{
+//   return num % 2 === 1;
+// });
+// console.log(newNumArr);
+
+// const newNumArr2 = numArr.filter((num) => {
+//   return num % 2 === 1;
+// })
+// console.log(newNumArr2);
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "じゃけぇ") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
