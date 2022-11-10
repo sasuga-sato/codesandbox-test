@@ -58,7 +58,7 @@
 // // const message1 = "私の名前は" + name + "です。年齢は" + age + "です。";
 // // console.log(message1);
 
-// //テンプレート文字列を用いた方法(バッククォーテーション``で囲む)
+// //テンプレート文字列を用いた方法(バッククォーテーション``で囲む)　＄（ダラー）
 // const message2 = `私の名前は${name}です。年齢は${age}です。`;
 // console.log(message2);
 
@@ -174,7 +174,7 @@
 /**
  * mapやfilterを使った配列の処理
  */
-const nameArr = ["田中", "山田", "じゃけぇ"];
+// const nameArr = ["田中", "山田", "じゃけぇ"];
 //基本的な配列
 // for (let index = 0; index < nameArr.length; index++){
 //   console.log(nameArr[index]);
@@ -213,11 +213,56 @@ const nameArr = ["田中", "山田", "じゃけぇ"];
 // })
 // console.log(newNumArr2);
 
-const newNameArr = nameArr.map((name) => {
-  if (name === "じゃけぇ") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(newNameArr);
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "じゃけぇ") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+//ある条件？条件がtrueの時：条件がfalseの時
+// const val1 = 1 < 0 ? "tureです" : "falseです";
+// console.log(val1);
+
+// //toLovaleStringは数値を３桁区切りにカンマを入れてくれる
+// const num = "1300";
+// console.log(num.toLocaleString());
+
+// //typeofは変数の型を比較してくれる
+// const formattedNum =
+//   typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
+// console.log(formattedNum);
+
+// const checkSum = (num1, num2) => {
+//   return num1 + num2 > 100 ? "１００を超えています" : "許容範囲内です";
+// };
+// console.log(checkSum(50, 40));
+
+/**
+ * 論理演算子の本当の意味を知ろう　&&（アンパサンド） ||（パイプライン）
+//  */
+// const flag1 = true;
+// const flag2 = false;
+
+// // if(flag1||flag2){
+// //   console.log("１か２はtureになります");
+// // }
+
+// // if(flag1 && flag2){
+// //   console.log("１も２もtureになります");
+// // }
+
+// // ||は左側がfalseなら右側を返す　nullはfalse判定
+// const num = null;
+// const fee = num || "金額未設定です";
+// console.log(fee);
+
+// //&& は左側がtureなら右側を返す
+// const num2 = 100;
+// const fee2 = num2 && "何か設定されました。";
+// console.log(fee2);
